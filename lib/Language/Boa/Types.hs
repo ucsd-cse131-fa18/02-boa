@@ -123,7 +123,7 @@ data Expr a
   | Id      !Id                            a      -- ^ x,y,z
   | Prim1   !Prim1    !(Expr a)            a      -- ^ add1, sub1
   | Prim2   !Prim2    !(Expr a)  !(Expr a) a      -- ^ add, sub
-  | Let     !Id       !(Expr a)  !(Expr a) a      -- ^ let x = e1 in e2
+  | Let     !(Bind a) !(Expr a)  !(Expr a) a      -- ^ let x = e1 in e2
   | If      !(Expr a) !(Expr a)  !(Expr a) a      -- ^ if e_cond: e1 else: e2
     deriving (Show, Functor)
 
